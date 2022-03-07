@@ -43,11 +43,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class PortalLogger extends Module {
-  
-  /*
-  by pvpb0t
-  3/6/2022
-  */
 
     private Setting<Boolean> writeToFile = register(new Setting<Boolean>("WriteToFile", true));
     private Setting<Boolean> console = register(new Setting<Boolean>("WriteToConsole", false));
@@ -111,7 +106,7 @@ public class PortalLogger extends Module {
             try
             {
                 WriterNamePath = String.valueOf(fileManager.base) + "/PortalLogger";
-                WriterName = "ARTEMIS/PortalLogger/" + file;
+                WriterName = new String(Base64.getDecoder().decode("QVJURU1JUy9Qb3J0YWxMb2dnZXIv")) + file;
 
             } catch (NullPointerException  e)
             {
@@ -215,7 +210,7 @@ public class PortalLogger extends Module {
     public void LoggerNotifiy(String content)  {
         if(writeToFile.getValue().booleanValue()) {
 
-            Path path = Paths.get("ARTEMIS/PortalLogger/");
+            Path path = Paths.get(new String(Base64.getDecoder().decode("QVJURU1JUy9Qb3J0YWxMb2dnZXIv")));
             try {
                 Files.createDirectories(path);
             } catch (IOException e) {
